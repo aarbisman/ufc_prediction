@@ -1,0 +1,360 @@
+col_name
+event_id
+event_date
+event_location
+fight_id
+matchup
+method
+round
+time
+time format
+referee
+details:
+fighters_a
+fighters_b
+knockdowns_a
+knockdowns_b
+landed_significant strikes_a
+attempted_significant strikes_a
+landed_significant strikes_b
+attempted_significant strikes_b
+significant strike percentage_a
+significant strike percentage_b
+landed_total strike_a
+attempted_total strike_a
+landed_total strike_b
+attempted_total strike_b
+landed_takedowns_a
+attempted_takedowns_a
+landed_takedowns_b
+attempted_takedowns_b
+takedown percentage_a
+takedown percentage_b
+submission attempts_a
+submission attempts_b
+reversals_a
+reversals_b
+control_a
+control_b
+Round 1 fighters_a
+Round 1 fighters_b
+Round 1 knockdowns_a
+Round 1 knockdowns_b
+Round 1 landed_significant strikes_a
+Round 1 attempted_significant strikes_a
+Round 1 landed_significant strikes_b
+Round 1 attempted_significant strikes_b
+Round 1 significant strike percentage_a
+Round 1 significant strike percentage_b
+Round 1 landed_total strike_a
+Round 1 attempted_total strike_a
+Round 1 landed_total strike_b
+Round 1 attempted_total strike_b
+Round 1 landed_takedowns_a
+Round 1 attempted_takedowns_a
+Round 1 landed_takedowns_b
+Round 1 attempted_takedowns_b
+Round 1 takedown percentage_a
+Round 1 takedown percentage_b
+Round 1 submission attempts_a
+Round 1 submission attempts_b
+Round 1 reversals_a
+Round 1 reversals_b
+Round 1 control_a
+Round 1 control_b
+Round 2 fighters_a
+Round 2 fighters_b
+Round 2 knockdowns_a
+Round 2 knockdowns_b
+Round 2 landed_significant strikes_a
+Round 2 attempted_significant strikes_a
+Round 2 landed_significant strikes_b
+Round 2 attempted_significant strikes_b
+Round 2 significant strike percentage_a
+Round 2 significant strike percentage_b
+Round 2 landed_total strike_a
+Round 2 attempted_total strike_a
+Round 2 landed_total strike_b
+Round 2 attempted_total strike_b
+Round 2 landed_takedowns_a
+Round 2 attempted_takedowns_a
+Round 2 landed_takedowns_b
+Round 2 attempted_takedowns_b
+Round 2 takedown percentage_a
+Round 2 takedown percentage_b
+Round 2 submission attempts_a
+Round 2 submission attempts_b
+Round 2 reversals_a
+Round 2 reversals_b
+Round 2 control_a
+Round 2 control_b
+Round 3 fighters_a
+Round 3 fighters_b
+Round 3 knockdowns_a
+Round 3 knockdowns_b
+Round 3 landed_significant strikes_a
+Round 3 attempted_significant strikes_a
+Round 3 landed_significant strikes_b
+Round 3 attempted_significant strikes_b
+Round 3 significant strike percentage_a
+Round 3 significant strike percentage_b
+Round 3 landed_total strike_a
+Round 3 attempted_total strike_a
+Round 3 landed_total strike_b
+Round 3 attempted_total strike_b
+Round 3 landed_takedowns_a
+Round 3 attempted_takedowns_a
+Round 3 landed_takedowns_b
+Round 3 attempted_takedowns_b
+Round 3 takedown percentage_a
+Round 3 takedown percentage_b
+Round 3 submission attempts_a
+Round 3 submission attempts_b
+Round 3 reversals_a
+Round 3 reversals_b
+Round 3 control_a
+Round 3 control_b
+Round 4 fighters_a
+Round 4 fighters_b
+Round 4 knockdowns_a
+Round 4 knockdowns_b
+Round 4 landed_significant strikes_a
+Round 4 attempted_significant strikes_a
+Round 4 landed_significant strikes_b
+Round 4 attempted_significant strikes_b
+Round 4 significant strike percentage_a
+Round 4 significant strike percentage_b
+Round 4 landed_total strike_a
+Round 4 attempted_total strike_a
+Round 4 landed_total strike_b
+Round 4 attempted_total strike_b
+Round 4 landed_takedowns_a
+Round 4 attempted_takedowns_a
+Round 4 landed_takedowns_b
+Round 4 attempted_takedowns_b
+Round 4 takedown percentage_a
+Round 4 takedown percentage_b
+Round 4 submission attempts_a
+Round 4 submission attempts_b
+Round 4 reversals_a
+Round 4 reversals_b
+Round 4 control_a
+Round 4 control_b
+Round 5 fighters_a
+Round 5 fighters_b
+Round 5 knockdowns_a
+Round 5 knockdowns_b
+Round 5 landed_significant strikes_a
+Round 5 attempted_significant strikes_a
+Round 5 landed_significant strikes_b
+Round 5 attempted_significant strikes_b
+Round 5 significant strike percentage_a
+Round 5 significant strike percentage_b
+Round 5 landed_total strike_a
+Round 5 attempted_total strike_a
+Round 5 landed_total strike_b
+Round 5 attempted_total strike_b
+Round 5 landed_takedowns_a
+Round 5 attempted_takedowns_a
+Round 5 landed_takedowns_b
+Round 5 attempted_takedowns_b
+Round 5 takedown percentage_a
+Round 5 takedown percentage_b
+Round 5 submission attempts_a
+Round 5 submission attempts_b
+Round 5 reversals_a
+Round 5 reversals_b
+Round 5 control_a
+Round 5 control_b
+fighters_a
+fighters_b
+landed_significant strikes_a
+attempted_significant strikes_a
+landed_significant strikes_b
+attempted_significant strikes_b
+significant strike percentage_a
+significant strike percentage_b
+landed_head_a
+attempted_head_a
+landed_head_b
+attempted_head_b
+landed_body_a
+attempted_body_a
+landed_body_b
+attempted_body_b
+landed_leg_a
+attempted_leg_a
+landed_leg_b
+attempted_leg_b
+landed_distance_a
+attempted_distance_a
+landed_distance_b
+attempted_distance_b
+landed_clinch_a
+attempted_clinch_a
+landed_clinch_b
+attempted_clinch_b
+landed_ground_a
+attempted_ground_a
+landed_ground_b
+attempted_ground_b
+Round 1 fighters_a
+Round 1 fighters_b
+Round 1 landed_significant strikes_a
+Round 1 attempted_significant strikes_a
+Round 1 landed_significant strikes_b
+Round 1 attempted_significant strikes_b
+Round 1 significant strike percentage_a
+Round 1 significant strike percentage_b
+Round 1 landed_head_a
+Round 1 attempted_head_a
+Round 1 landed_head_b
+Round 1 attempted_head_b
+Round 1 landed_body_a
+Round 1 attempted_body_a
+Round 1 landed_body_b
+Round 1 attempted_body_b
+Round 1 landed_leg_a
+Round 1 attempted_leg_a
+Round 1 landed_leg_b
+Round 1 attempted_leg_b
+Round 1 landed_distance_a
+Round 1 attempted_distance_a
+Round 1 landed_distance_b
+Round 1 attempted_distance_b
+Round 1 landed_clinch_a
+Round 1 attempted_clinch_a
+Round 1 landed_clinch_b
+Round 1 attempted_clinch_b
+Round 1 landed_ground_a
+Round 1 attempted_ground_a
+Round 1 landed_ground_b
+Round 1 attempted_ground_b
+Round 2 fighters_a
+Round 2 fighters_b
+Round 2 landed_significant strikes_a
+Round 2 attempted_significant strikes_a
+Round 2 landed_significant strikes_b
+Round 2 attempted_significant strikes_b
+Round 2 significant strike percentage_a
+Round 2 significant strike percentage_b
+Round 2 landed_head_a
+Round 2 attempted_head_a
+Round 2 landed_head_b
+Round 2 attempted_head_b
+Round 2 landed_body_a
+Round 2 attempted_body_a
+Round 2 landed_body_b
+Round 2 attempted_body_b
+Round 2 landed_leg_a
+Round 2 attempted_leg_a
+Round 2 landed_leg_b
+Round 2 attempted_leg_b
+Round 2 landed_distance_a
+Round 2 attempted_distance_a
+Round 2 landed_distance_b
+Round 2 attempted_distance_b
+Round 2 landed_clinch_a
+Round 2 attempted_clinch_a
+Round 2 landed_clinch_b
+Round 2 attempted_clinch_b
+Round 2 landed_ground_a
+Round 2 attempted_ground_a
+Round 2 landed_ground_b
+Round 2 attempted_ground_b
+Round 3 fighters_a
+Round 3 fighters_b
+Round 3 landed_significant strikes_a
+Round 3 attempted_significant strikes_a
+Round 3 landed_significant strikes_b
+Round 3 attempted_significant strikes_b
+Round 3 significant strike percentage_a
+Round 3 significant strike percentage_b
+Round 3 landed_head_a
+Round 3 attempted_head_a
+Round 3 landed_head_b
+Round 3 attempted_head_b
+Round 3 landed_body_a
+Round 3 attempted_body_a
+Round 3 landed_body_b
+Round 3 attempted_body_b
+Round 3 landed_leg_a
+Round 3 attempted_leg_a
+Round 3 landed_leg_b
+Round 3 attempted_leg_b
+Round 3 landed_distance_a
+Round 3 attempted_distance_a
+Round 3 landed_distance_b
+Round 3 attempted_distance_b
+Round 3 landed_clinch_a
+Round 3 attempted_clinch_a
+Round 3 landed_clinch_b
+Round 3 attempted_clinch_b
+Round 3 landed_ground_a
+Round 3 attempted_ground_a
+Round 3 landed_ground_b
+Round 3 attempted_ground_b
+Round 4 fighters_a
+Round 4 fighters_b
+Round 4 landed_significant strikes_a
+Round 4 attempted_significant strikes_a
+Round 4 landed_significant strikes_b
+Round 4 attempted_significant strikes_b
+Round 4 significant strike percentage_a
+Round 4 significant strike percentage_b
+Round 4 landed_head_a
+Round 4 attempted_head_a
+Round 4 landed_head_b
+Round 4 attempted_head_b
+Round 4 landed_body_a
+Round 4 attempted_body_a
+Round 4 landed_body_b
+Round 4 attempted_body_b
+Round 4 landed_leg_a
+Round 4 attempted_leg_a
+Round 4 landed_leg_b
+Round 4 attempted_leg_b
+Round 4 landed_distance_a
+Round 4 attempted_distance_a
+Round 4 landed_distance_b
+Round 4 attempted_distance_b
+Round 4 landed_clinch_a
+Round 4 attempted_clinch_a
+Round 4 landed_clinch_b
+Round 4 attempted_clinch_b
+Round 4 landed_ground_a
+Round 4 attempted_ground_a
+Round 4 landed_ground_b
+Round 4 attempted_ground_b
+Round 5 fighters_a
+Round 5 fighters_b
+Round 5 landed_significant strikes_a
+Round 5 attempted_significant strikes_a
+Round 5 landed_significant strikes_b
+Round 5 attempted_significant strikes_b
+Round 5 significant strike percentage_a
+Round 5 significant strike percentage_b
+Round 5 landed_head_a
+Round 5 attempted_head_a
+Round 5 landed_head_b
+Round 5 attempted_head_b
+Round 5 landed_body_a
+Round 5 attempted_body_a
+Round 5 landed_body_b
+Round 5 attempted_body_b
+Round 5 landed_leg_a
+Round 5 attempted_leg_a
+Round 5 landed_leg_b
+Round 5 attempted_leg_b
+Round 5 landed_distance_a
+Round 5 attempted_distance_a
+Round 5 landed_distance_b
+Round 5 attempted_distance_b
+Round 5 landed_clinch_a
+Round 5 attempted_clinch_a
+Round 5 landed_clinch_b
+Round 5 attempted_clinch_b
+Round 5 landed_ground_a
+Round 5 attempted_ground_a
+Round 5 landed_ground_b
+Round 5 attempted_ground_b
