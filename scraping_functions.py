@@ -46,10 +46,33 @@ def parse_agg_table(table, table_structure):
 
     for i in range(len(table_data)):
         ## remove new lines and tabs for easier formatting
-        table_data_clean = table_data[i].text.replace("\n\n", "").replace("      ","").replace("\n    \n","").rstrip()
 
-        ## fill in the dictioanry for the corresponding structure
-        table_dict[table_structure[i][0]] = table_data_clean.split(table_structure[i][1])
+        if table_structure[i][1] == 'singular':
+
+            fighter_a_stat = table_data[i].find_all('p')[0].text.rstrip().lstrip()
+            fighter_a_stat_name = 'fighter_a_' + table_structure[i][0]
+
+            fighter_b_stat = table_data[i].find_all('p')[1].text.rstrip().lstrip()
+            fighter_b_stat_name = 'fighter_b_' + table_structure[i][0]
+
+            ## fill in the dictioanry for the corresponding structure
+            table_dict[fighter_a_stat_name] = fighter_a_stat
+            table_dict[fighter_b_stat_name] = fighter_b_stat
+
+        elif table_structure[i][1] == 'composite':
+            fighter_a_attempted_stat, fighter_a_landed_stat = table_data[i].find_all('p')[0].text.rstrip().lstrip().split(' of ')
+            fighter_a_attempted_stat_name = 'fighter_a_attempted_' + table_structure[i][0]
+            fighter_a_landed_stat_name = 'fighter_a_landed_' + table_structure[i][0]
+
+            fighter_b_attempted_stat, fighter_b_landed_stat = table_data[i].find_all('p')[1].text.rstrip().lstrip().split(' of ')
+            fighter_b_attempted_stat_name = 'fighter_b_attempted_' + table_structure[i][0]
+            fighter_b_landed_stat_name = 'fighter_b_landed_' + table_structure[i][0]
+
+            ## fill in the dictioanry for the corresponding structure
+            table_dict[fighter_a_attempted_stat_name] = fighter_a_attempted_stat
+            table_dict[fighter_a_landed_stat_name] = fighter_a_landed_stat
+            table_dict[fighter_b_attempted_stat_name] = fighter_b_attempted_stat
+            table_dict[fighter_b_landed_stat_name] = fighter_b_landed_stat
 
     return table_dict
 
@@ -57,18 +80,17 @@ def parse_per_round_table(per_round_table, per_round_table_structure):
     '''parses the fight statistisc tables that are split per round'''
 
     ## Save all table headers and table rows:
-    headers_and_rows = per_round_table.find_all(['th','tr'])
+    headers_and_rows = per_round_table.find_all(["thead", "tr"], {"class": ["b-fight-details__table-row b-fight-details__table-row_type_head", "b-fight-details__table-row"]})
 
     ## Initialize the stats_per_round_dict and round unumber object
     stats_per_round_dict = {}
     round = None
 
-    for i in headers_and_rows:
+    for i in headers_and_rows[1:]:
 
         ## if the soup_item is a table header, set our round variable to it
-        if i.name == 'th':
-            round_num = i.text.replace("\n              ", "").replace("\n            ","")
-            # print(round_num)
+        if i.name == 'thead':
+            round_num = i.text.lstrip().rstrip().replace(' ', '_')
 
         ## if the soup_item is a table row, parse the table row data and assign it to the current round
         if i.name == 'tr':
@@ -77,11 +99,68 @@ def parse_per_round_table(per_round_table, per_round_table_structure):
 
     return stats_per_round_dict
 
+def get_fight_winner(soup_obj, fight_id):
+
+    ## I have 2 person tag objects, one green, one grey
+    person_tags = soup_obj.find_all('div','b-fight-details__person')
+
+    if len(person_tags) != 2:
+        msg = "unusual data format found: More than 2 fighter tags found for fight: " + fight_id
+        warnings.warn(msg)
+
+    ## initialize a dictionary of winner and loser
+    winner_loser_dict = {"winner":"",
+                         "loser":""}
+    
+    for person in person_tags:
+
+
+        ## if tag contains green that contains a "W" -> set the dictionary winner to this person's tag name
+        if person.find('i','b-fight-details__person-status b-fight-details__person-status_style_green'):
+
+            winner_loser_dict['winner'] = person.find('a').text.rstrip()
+
+
+        ## if tag contains gray that contains a "L" -> set the dictionary winner to this person's tag name
+        elif person.find('i','b-fight-details__person-status b-fight-details__person-status_style_gray'):
+
+            if person.find('i','b-fight-details__person-status b-fight-details__person-status_style_gray').text.strip() == 'L':
+
+                winner_loser_dict['loser'] = person.find('a').text.rstrip()
+
+            ## if tag contains gray that contains a "D" -> return a special draw dictioanry
+            elif person.find('i','b-fight-details__person-status b-fight-details__person-status_style_gray').text.strip() == 'D':
+
+                return {"winner":"draw",
+                         "loser":"draw"}
+            
+            elif person.find('i','b-fight-details__person-status b-fight-details__person-status_style_gray').text.strip() == 'NC':
+
+                return {"winner":"no contest",
+                         "loser":"no contest"}
+            
+            else:
+                msg = "unusual data format found: gray header is not loss, draw, or no-contest for fight: " + fight_id
+                warnings.warn(msg)
+                return 'Error: gray header, not loss, draw, or no-contest'
+
+        else:
+            msg = "unusual data format found: no gray or green tag found for fight: " + fight_id
+            warnings.warn(msg)
+            return 'Error: no gray or green tag found'
+
+    return winner_loser_dict
+
 def get_fight_result_details(fight_soup_obj, fight_results_table_structure, fight_id):
     '''gets the overall fight results kept at the top of the fight details page'''
 
     fight_results_dict = {}
 
+    winner_loser_dict = get_fight_winner(fight_soup_obj, fight_id)
+    # fight_results_dict['winner_loser'] = winner_loser_dict
+    fight_results_dict['fight_winner'] = winner_loser_dict['winner']
+    fight_results_dict['fight_loser'] = winner_loser_dict['loser']
+    
     fight_results_table = fight_soup_obj.find_all('p',{'class:','b-fight-details__text'})[0].find_all("i",{'class:','b-fight-details__text-item_first','class:','b-fight-details__text-item'})
     fight_results_details = fight_soup_obj.find_all('p',{'class:','b-fight-details__text-item_first','class:','b-fight-details__text'})[1]
 
@@ -111,7 +190,7 @@ def get_fight_result_details(fight_soup_obj, fight_results_table_structure, figh
 def extract_fight_data(fight_soup, totals_table_structure, sig_str_table_structure, fight_results_table_structure, fight_id):
     '''extracts all relevant fight data for a given ufc fight'''
 
-    fight_tables = fight_soup.find_all("tbody")
+    fight_tables = fight_soup.find_all("table")
     fight_data = {}
 
     ## get the fight results
@@ -188,6 +267,7 @@ def get_full_event_data(event_soup_object, totals_table_structure, sig_str_table
 
     ## gets the date and location of event
     full_event_data_dict['event_details'] = get_event_specific_data(event_soup_object)
+    full_event_data_dict['fight_list'] = []
 
     ## uses the fight dictionaries for each fight in the event
     fight_links_of_single_event = get_all_fight_details(event_soup_object)
@@ -199,9 +279,9 @@ def get_full_event_data(event_soup_object, totals_table_structure, sig_str_table
         fight_id = fight_link.split('/fight-details/')[-1]
 
         fight_stats = extract_fight_data(fight_soup_obj, totals_table_structure, sig_str_table_structure, fight_results_table_structure, fight_id)
-        fight_stats['fight_name'] = fight_name
+        fight_stats['results']['fight_name'] = fight_name
 
-        full_event_data_dict[fight_id] = fight_stats
+        full_event_data_dict['fight_list'].append({fight_id:fight_stats})
 
     ## saves everything as a nested dictionary object
     return full_event_data_dict

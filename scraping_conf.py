@@ -1,23 +1,24 @@
-totals_table_structure = {0: ['fighters', ' \n'],
-                          1: ['knockdowns', '\n    '],
-                          2: ['significant strikes', '\n    '],
-                          3: ['significant strike percentage', '\n    '],
-                          4: ['total strike', '\n    '],
-                          5: ['takedowns', '\n    '],
-                          6: ['takedown percentage', '\n    '],
-                          7: ['submission attempts', '\n    '],
-                          8: ['reversals', '\n    '],
-                          9: ['control', '\n    ']}
+totals_table_structure = {0: ['fighter', 'singular'],
+                          1: ['knockdowns', 'singular'],
+                          2: ['significant_strikes', 'composite'],
+                          3: ['significant_strike_percentage', 'singular'],
+                          4: ['total_strike', 'composite'],
+                          5: ['takedowns', 'composite'],
+                          6: ['takedown_percentage', 'singular'],
+                          7: ['submission_attempts', 'singular'],
+                          8: ['reversals', 'singular'],
+                          9: ['control', 'singular']}
 
-sig_str_table_structure = {0: ['fighters', ' \n'],
-                          1: ['significant strikes', '\n    '],
-                          2: ['significant strike percentage', '\n    '],
-                          3: ['head', '\n    '],
-                          4: ['body', '\n    '],
-                          5: ['leg', '\n    '],
-                          6: ['distance', '\n    '],
-                          7: ['clinch', '\n    '],
-                          8: ['ground', '\n    ']}
+sig_str_table_structure = {0: ['fighter', 'singular'],
+                          1: ['significant strikes', 'composite'],
+                          2: ['significant strike percentage', 'singular'],
+                          3: ['head', 'composite'],
+                          4: ['body', 'composite'],
+                          5: ['leg', 'composite'],
+                          6: ['distance', 'composite'],
+                          7: ['clinch', 'composite'],
+                          8: ['ground', 'composite']}
+
 
 fight_results_table_structure = {0: ['method', '\n\n        \n '],
                           1: ['round', '\n        \n        '],
